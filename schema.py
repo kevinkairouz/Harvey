@@ -4,8 +4,8 @@ from langchain.messages import HumanMessage, AIMessage
 import operator 
 
 class HarveyState(TypedDict): 
-    userQuery: list[HumanMessage]
-    harvey_response: list[AIMessage] 
+    userQuery: Annotated[list[HumanMessage], operator.add]
+    harvey_response: Annotated[list[AIMessage], operator.add] 
 
 
 
